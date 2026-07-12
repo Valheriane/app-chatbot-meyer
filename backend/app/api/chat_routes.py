@@ -19,6 +19,7 @@ def chat(request: ChatRequest, db: Session = Depends(get_db)):
             mode=request.mode,
             k=request.k,
             verbosity=request.verbosity,
+            temperature=request.temperature,
         )
     except ValueError as exc:
         raise HTTPException(status_code=404, detail=str(exc))

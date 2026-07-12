@@ -1,11 +1,14 @@
 from pydantic import BaseModel
 
 
+
 class ChatRequest(BaseModel):
     question: str
     conversation_id: int | None = None
     mode: str = "search"
     k: int = 6
+    verbosity: str = "normal"
+    temperature: float = 0.2
 
 
 class SourceResponse(BaseModel):
@@ -25,9 +28,3 @@ class ChatResponse(BaseModel):
     answer: str
     sources: list[SourceResponse]
 
-class ChatRequest(BaseModel):
-    question: str
-    conversation_id: int | None = None
-    mode: str = "search"
-    k: int = 6
-    verbosity: str = "normal"

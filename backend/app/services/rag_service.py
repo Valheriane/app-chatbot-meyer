@@ -14,6 +14,7 @@ def ask_rag(
     conversation_id: int | None = None,
     k: int = 6,
     verbosity: str = "normal",
+    temperature: float = 0.2,
 ) -> dict:
     if conversation_id is None:
         conversation = Conversation(
@@ -43,8 +44,8 @@ def ask_rag(
         mode=mode,
         verbosity=verbosity,
     )
-    answer = call_groq(prompt)
-
+    answer = call_groq(prompt, temperature=temperature)
+    
     assistant_message = Message(
         conversation_id=conversation.id,
         role="assistant",
