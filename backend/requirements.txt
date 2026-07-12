@@ -1,0 +1,13 @@
+fastapi[standard-no-fastapi-cloud-cli]
+uvicorn
+sqlalchemy
+psycopg[binary]
+pgvector
+sentence-transformers
+numpy
+python-dotenv
+pyyaml
+pypdf
+groq
+pydantic-settings
+requests
